@@ -30,22 +30,30 @@ const useStyles = makeStyles((theme) => ({
 
 
 const StyledTableCell = withStyles((theme) => ({
+  root: {
+    borderBottom: "1px solid #fff",
+    borderRight: "1px solid #fff"
+  },
    head: {
-       backgroundColor: '#f3f3f7',
-    color: theme.palette.common.black,
-    // border: '1px solid #b9b6b6',
-    fontWeight: 600,
-    fontSize: 19
+    backgroundColor: '#0b5394',
+    color: theme.palette.common.white,
+    fontWeight: 400,
+    fontSize: 16
    },
    body: {
       fontSize: 14,
-   },
+   }
+
+
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
    root: {
       '&:nth-of-type(odd)': {
-         backgroundColor: theme.palette.action.hover,
+         backgroundColor: '#c6dbef',
+      },
+       '&:nth-of-type(even)': {
+         backgroundColor: '#d7e3ed',
       },
    },
 }))(TableRow);
@@ -98,7 +106,7 @@ export default function AlarmsTable({items}) {
    <Table  aria-label="customized table" className={classes.table} stickyHeader>
       <TableHead className={classes.head}>
          <TableRow>
-          <StyledTableCell className={classes.cell}>Id</StyledTableCell>
+          <StyledTableCell>Id</StyledTableCell>
             <StyledTableCell>Title</StyledTableCell>
             <StyledTableCell align="right">Amount</StyledTableCell>
             <StyledTableCell align="right">Spend date</StyledTableCell>
